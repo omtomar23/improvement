@@ -9,7 +9,7 @@ package com.om.improvement.algos.sorting;
 
 import com.om.improvement.TimeMonitor;
 
-public class SortingTest
+public class ISortTest
 {
     public static void main(String[] args)
     {

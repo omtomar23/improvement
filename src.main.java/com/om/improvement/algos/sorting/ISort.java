@@ -7,7 +7,7 @@
 
 package com.om.improvement.algos.sorting;
 
-public interface Sorting
+public interface ISort
 {
     public int[] sort(int[] arr);
 }

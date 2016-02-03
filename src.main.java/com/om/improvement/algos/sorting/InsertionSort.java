@@ -9,7 +9,7 @@ package com.om.improvement.algos.sorting;
 
 import com.om.improvement.GeneralTools;
 
-public class InsertionSort implements Sorting
+public class InsertionSort implements ISort
 {
     static int swapCount;
     

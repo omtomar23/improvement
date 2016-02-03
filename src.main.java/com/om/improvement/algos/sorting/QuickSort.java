@@ -9,7 +9,7 @@ package com.om.improvement.algos.sorting;
 
 import com.om.improvement.GeneralTools;
 
-public class QuickSort implements Sorting
+public class QuickSort implements ISort
 {
     static int swapCount;
     public static final QuickSort INSTANCE = new QuickSort();

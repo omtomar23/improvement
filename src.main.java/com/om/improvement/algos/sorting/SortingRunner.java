@@ -11,10 +11,10 @@ import com.om.improvement.TimeMonitor;
 
 public class SortingRunner
 {
-    private Sorting sorting;
+    private ISort sorting;
     private TimeMonitor monitor;
     
-    public SortingRunner(TimeMonitor monitor, Sorting sorting)
+    public SortingRunner(TimeMonitor monitor, ISort sorting)
     {
         this.monitor = monitor;
         this.sorting = sorting;

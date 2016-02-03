@@ -12,7 +12,7 @@ import com.om.improvement.GeneralTools;
 /**
  * 
  */
-public class CountingSort implements Sorting
+public class CountingSort implements ISort
 {
     public static final CountingSort INSTANCE = new CountingSort();
     
