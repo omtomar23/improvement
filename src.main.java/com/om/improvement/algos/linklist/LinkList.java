@@ -7,6 +7,8 @@
 
 package com.om.improvement.algos.linklist;
 
+import com.om.improvement.algos.Node;
+
 public class LinkList<T>
 {
     private Node<T> node;

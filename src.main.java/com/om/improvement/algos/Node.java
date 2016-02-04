@@ -5,7 +5,7 @@
  * 
  */
 
-package com.om.improvement.algos.linklist;
+package com.om.improvement.algos;
 
 public class Node<T>
 {
