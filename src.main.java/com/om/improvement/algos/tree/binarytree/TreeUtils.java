@@ -1,24 +1,25 @@
-/*
- * Copyright (c) Siemens AG 2016 ALL RIGHTS RESERVED.
- *
- * R8  
- * 
- */
-
 package com.om.improvement.algos.tree.binarytree;
+
+import java.util.List;
 
 import com.om.improvement.algos.Node;
 
-public class ZigZag
-{
-    public void zigZag(Node<Integer> head)
-    {
-        
-    }
-    
-    public static void main(String[] args)
-    {
-        Node<Integer> node1 = new Node<Integer>(null, 1, null);
+public class TreeUtils {
+	private TreeUtils(){}
+	
+	  public static void printTreeNode(List<Node<Integer>> nodes)
+	  {
+	    	for (Node<Integer> node : nodes) 
+	    	{
+				System.out.print(node.getElement() +" ,");
+			}
+	    	System.out.println();
+	  }
+	  
+	public static Node<Integer> createDummyTree() 
+	{
+		Node<Integer> node10 = new Node<Integer>(null, 10, null);
+		Node<Integer> node1 = new Node<Integer>(null, 1, node10);
         Node<Integer> node12 = new Node<Integer>(null, 12, null);
         
         Node<Integer> node25 = new Node<Integer>(node1, 25, node12);
@@ -29,13 +30,6 @@ public class ZigZag
         Node<Integer> node75 = new Node<Integer>(node62, 75, node100);
         
         Node<Integer> node50 = new Node<Integer>(node25, 50, node75);
-        
-        ZigZag zigZag = new ZigZag();
-        zigZag.zigZag(node50);
-    }
+		return node50;
+	}
 }
-
-/*
- * Copyright (c) Siemens AG 2016 ALL RIGHTS RESERVED
- * R8
- */

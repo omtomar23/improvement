@@ -20,7 +20,7 @@ public class Node<T>
         this.next = next;
     }
     
-    public Node<T> getFirst()
+    public Node<T> getLeft()
     {
         return first;
     }
@@ -30,7 +30,7 @@ public class Node<T>
         return element;
     }
     
-    public Node<T> getNext()
+    public Node<T> getRight()
     {
         return next;
     }

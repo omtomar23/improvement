@@ -45,7 +45,7 @@ public class LinkList<T>
                 System.out.println(localNode.getElement());
                 if (localNode.getElement().equals(element))
                 {
-                    Node<T> next = localNode.getNext();
+                    Node<T> next = localNode.getRight();
                     if (next != null)
                     {
                         node = next;
@@ -61,7 +61,7 @@ public class LinkList<T>
                 }
                 else
                 {
-                    localNode = localNode.getNext();
+                    localNode = localNode.getRight();
                 }
             }
             
