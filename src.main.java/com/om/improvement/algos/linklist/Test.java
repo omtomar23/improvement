@@ -23,16 +23,24 @@ public class Test
 //        removed = list.remove(2);
 //        System.out.println("removed=" + removed + " ,Size=" + list.size());
     	
-    	SingleLinkList<Integer> list = new SingleLinkList<Integer>();
+    	SinglyLinkList<Integer> list = new SinglyLinkList<Integer>();
     	list.add(1);
     	list.add(3);
-    	list.add(0,5);
-    	list.add(6);
-    	
-    	list.remove(2);
+
     	System.out.println("Size="+ list.size());
     	System.out.println("Last Elment="+ list.getLast());
     	list.traverse();
+    	System.out.println("========");
+    	list.reverse();
+    	
+    	list.traverse();
+    	
+//    	DoublyLinkList<Integer> list = new DoublyLinkList<Integer>();
+//    	list.add(1);
+//    	list.add(3);
+//    	list.addFirst(5);
+//    	System.out.println("Size="+ list.size());
+//    	list.traverse();
     	
     }
 }

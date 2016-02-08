@@ -3,11 +3,11 @@ package com.om.improvement.algos.linklist;
 import java.util.NoSuchElementException;
 
 
-public class SingleLinkList<T> implements MyList<T>
+public class SinglyLinkList<T> implements MyList<T>
 {
-	private SingleLinkNode<T> head;
+	private SinglyLinkNode<T> head;
 	private int count;
-	public SingleLinkList()
+	public SinglyLinkList()
 	{
 		
 	}
@@ -17,7 +17,7 @@ public class SingleLinkList<T> implements MyList<T>
 		if(!(index >= 0 && index <= count))
 			throw new IllegalArgumentException("Index in more than count");
 		
-		SingleLinkNode<T> temp = head;
+		SinglyLinkNode<T> temp = head;
 		if(index == 0)
 		{
 			head = temp.getRight();
@@ -25,7 +25,7 @@ public class SingleLinkList<T> implements MyList<T>
 		}
 		else
 		{
-			SingleLinkNode<T> previous = temp;
+			SinglyLinkNode<T> previous = temp;
 			int nodeIndex = 0;
 			while((nodeIndex != index))
 			{
@@ -42,7 +42,7 @@ public class SingleLinkList<T> implements MyList<T>
 	
 	public void removeLast()
 	{
-		SingleLinkNode<T> temp = head;
+		SinglyLinkNode<T> temp = head;
 		if (temp == null)
 			throw new NoSuchElementException();
 
@@ -53,7 +53,7 @@ public class SingleLinkList<T> implements MyList<T>
 		}
 		else
 		{
-			SingleLinkNode<T> previuos = temp;
+			SinglyLinkNode<T> previuos = temp;
 			while(temp.getRight() != null)
 			{
 				previuos = temp;
@@ -72,7 +72,7 @@ public class SingleLinkList<T> implements MyList<T>
 	
 	public void removeFirst()
 	{
-		SingleLinkNode<T> temp = head;
+		SinglyLinkNode<T> temp = head;
         if (temp == null)
             throw new NoSuchElementException();
         head = temp.getRight();
@@ -84,16 +84,16 @@ public class SingleLinkList<T> implements MyList<T>
 		if(!(index >= 0 && index <= count))
 			throw new IllegalArgumentException("Index in more than count");
 
-		SingleLinkNode<T> temp = head;
+		SinglyLinkNode<T> temp = head;
 		if(temp == null || index == 0)
 		{
-			head = new SingleLinkNode<T>(element, head);
+			head = new SinglyLinkNode<T>(element, head);
 			count++;
 		}
 		else
 		{
 			int position = 0;
-			SingleLinkNode<T> previousNode = temp;
+			SinglyLinkNode<T> previousNode = temp;
 			while(position != index)
 			{
 				previousNode = temp;
@@ -101,7 +101,7 @@ public class SingleLinkList<T> implements MyList<T>
 				position++;
 			}
 
-			previousNode.setRight(new SingleLinkNode<T>(element, temp));
+			previousNode.setRight(new SinglyLinkNode<T>(element, temp));
 			count++;
 		}
 	}
@@ -110,8 +110,8 @@ public class SingleLinkList<T> implements MyList<T>
 	{
 		if (head == null)
 			throw new NoSuchElementException();
-		SingleLinkNode<T> temp = head;
-		SingleLinkNode<T> lastNode = temp;
+		SinglyLinkNode<T> temp = head;
+		SinglyLinkNode<T> lastNode = temp;
 		while(temp != null)
 		{
 			lastNode = temp;
@@ -131,12 +131,12 @@ public class SingleLinkList<T> implements MyList<T>
 	{
 		if(head == null)
 		{
-			head = new SingleLinkNode<T>(element, null);
+			head = new SinglyLinkNode<T>(element, null);
 			count++;
 		}
 		else
 		{
-			head = new SingleLinkNode<T>(element, head);
+			head = new SinglyLinkNode<T>(element, head);
 			count++;
 		}
 	}
@@ -150,33 +150,24 @@ public class SingleLinkList<T> implements MyList<T>
 	{
 		if(head == null)
 		{
-			head = new SingleLinkNode<T>(element, null);
+			head = new SinglyLinkNode<T>(element, null);
 			count++;
 		}
 		else
 		{
-			SingleLinkNode<T> temp = head;
-			while(temp != null)
+			SinglyLinkNode<T> temp = head;
+			while(temp.getRight() != null)
 			{
-				if(temp.getRight() != null)
-				{
-					//move to next node
-					temp = temp.getRight();
-				}
-				else
-				{
-					temp.setRight(new SingleLinkNode<T>(element, null));
-					break;
-				}
-				
+				temp = temp.getRight();
 			}
+			temp.setRight(new SinglyLinkNode<T>(element, null));
 			count++;
 		}
 	}
 	
 	public void traverse()
 	{
-		SingleLinkNode<T> temp = head;
+		SinglyLinkNode<T> temp = head;
 		while(temp != null)
 		{
 			System.out.println(temp.getElement());
@@ -187,6 +178,22 @@ public class SingleLinkList<T> implements MyList<T>
 	public int size() 
 	{
 		return count;
+	}
+	
+	public void reverse()
+	{
+		SinglyLinkNode<T> current = head;
+		SinglyLinkNode<T> previous = null;
+		while(current != null)
+		{
+			SinglyLinkNode<T> next = current.getRight();
+			current.setRight(previous);
+			
+			previous = current;
+			current = next;
+		}
+		
+		head = previous;
 	}
 	
 	

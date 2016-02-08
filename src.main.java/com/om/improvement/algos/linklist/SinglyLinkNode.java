@@ -1,12 +1,12 @@
 package com.om.improvement.algos.linklist;
 
 
-public class SingleLinkNode<T> 
+public class SinglyLinkNode<T> 
 {
 	private T element;
-	private SingleLinkNode<T> right;
+	private SinglyLinkNode<T> right;
 	
-	public SingleLinkNode(T element, SingleLinkNode<T> right)
+	public SinglyLinkNode(T element, SinglyLinkNode<T> right)
 	{
 		this.element = element;
 		this.right = right;
@@ -17,12 +17,12 @@ public class SingleLinkNode<T>
 		return element;
 	}
 	
-	public SingleLinkNode<T> getRight() 
+	public SinglyLinkNode<T> getRight() 
 	{
 		return right;
 	}
 	
-	public void setRight(SingleLinkNode<T> right) 
+	public void setRight(SinglyLinkNode<T> right) 
 	{
 		this.right = right;
 	}
